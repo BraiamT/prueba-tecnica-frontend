@@ -5,7 +5,6 @@ export const employeesSlice = createSlice({
     initialState: {
         isSaving: false,
         messageSaved: '',
-        selectedView: 'employees',
         employees: []
     },
     reducers: {
@@ -19,8 +18,9 @@ export const employeesSlice = createSlice({
         },
         setEmployees: ( state, action ) => {
             state.employees = action.payload;
+            state.isSaving = false;
         },
-        setSaving: ( state ) => {
+        setLoading: ( state ) => {
             state.isSaving = true;
             state.messageSaved = '';
         },
@@ -37,5 +37,5 @@ export const {
     clearEmployeesOnLogout,
     savingEmployee,
     setEmployees,
-    setSaving,
+    setLoading,
 } = employeesSlice.actions;

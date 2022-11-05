@@ -1,5 +1,4 @@
-import { EmployeesLayout } from "../layout/EmployeesLayout"
-
+import { EmployeesLayout } from '../layout/EmployeesLayout';
 
 export const UploadPage = () => {
     return (
