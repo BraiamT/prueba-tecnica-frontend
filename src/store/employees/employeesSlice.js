@@ -5,6 +5,7 @@ export const employeesSlice = createSlice({
     initialState: {
         isSaving: false,
         messageSaved: '',
+        isModalOpen: false,
         employees: []
     },
     reducers: {
@@ -12,12 +13,14 @@ export const employeesSlice = createSlice({
             state.isSaving = true;
         },
         addNewEmployee: ( state, action ) => {
-            state.employees.push( action.payload );
+            const newEmployee = { ...action.payload, id: state.employees.at(-1).id + 1 }
+            state.employees.push( newEmployee );
             state.messageSaved = `Employee ${ action.payload.name }, agregado con éxito`;
             state.isSaving = false;
         },
         setEmployees: ( state, action ) => {
             state.employees = action.payload;
+            state.messageSaved = '';
             state.isSaving = false;
         },
         setLoading: ( state ) => {
@@ -29,6 +32,12 @@ export const employeesSlice = createSlice({
             state.messageSaved = '';
             state.employees = [];
         },
+        setOpenModal: ( state ) => {
+            state.isModalOpen = true;
+        },
+        setCloseModal: ( state ) => {
+            state.isModalOpen = false;
+        },
     }
 });
 
@@ -36,6 +45,8 @@ export const {
     addNewEmployee,
     clearEmployeesOnLogout,
     savingEmployee,
+    setCloseModal,
     setEmployees,
     setLoading,
+    setOpenModal,
 } = employeesSlice.actions;

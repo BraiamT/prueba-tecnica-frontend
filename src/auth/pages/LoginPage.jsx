@@ -1,6 +1,8 @@
 import { Alert, Button, Grid, TextField } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getEnvironments } from '../../helpers';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 import { useForm } from '../../hooks/useForm';
 import { login, startLogin } from '../../store/auth';
 import { LoginBackground } from '../components/LoginBackground';
@@ -16,6 +18,10 @@ const formValidations = {
 }
 
 export const LoginPage = () => {
+
+    const { VITE_APP_TITLE_PREFIX } = getEnvironments();
+
+    useDocumentTitle(`${ VITE_APP_TITLE_PREFIX } | Login`);
 
     const { status, errorMessage } = useSelector( state => state.auth );
     const dispatch = useDispatch();

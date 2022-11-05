@@ -18,9 +18,9 @@ como frontend tooling y [Yarn](https://yarnpkg.com/) como gestor de paquetes.
  - Consumo de **APIs** (GET y POST)
  - Búsqueda de información en data tables con paginación
  - Uso de modals
- - Implementación de un **Drag & Drop** con preview de imágenes
- - Carga de imágenes a storage ([Cloudinary](https://cloudinary.com/))
- - Uso de [Material UI](https://mui.com/)
+ - Implementación de un **Drag & Drop** con preview de imágenes - Not completed :c
+ - Carga de imágenes a storage ([Cloudinary](https://cloudinary.com/)) - Not completed :c
+ - Uso de [Material UI](https://mui.com/) y [Bootstrap](https://getbootstrap.com/)
 
 ## Uso
 
@@ -74,5 +74,12 @@ yarn build
 Esto generará en la raíz del proyecto la carpeta *dist* la cual contendrá los archivos
 necesarios para hacer el deploy. Esto utilizará por defecto las variables de entorno de
 producción (*.env.production*)
+
+### Comentarios adicionales:
+
+Una disculpa de antemano por el diseño tan pobre, sé que no hay excusas pero tengo otras
+actividades en mi trabjo actual que debo atender así que es por ello mismo que me disculpo
+por no completar la pantalla de Upload. Sin embargo agradezco mucho la oportunidad y quedo
+atento a cualquier comentario :D
 
 > By *BraiamT* :smile:
